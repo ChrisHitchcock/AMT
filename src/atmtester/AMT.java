@@ -53,16 +53,13 @@ public class AMT {
 
     /**
      * This method allows the user to add interest to their balance.
-     * @param P Principle amount
      * @param i Interest rate
      * @param n Number of periods
      * @return currentBal
      */
-    public double addInterest(double P, double i, int n) {
-        if (P > 0 && i > 0 && n > 0) {
-            double dailyInt;
-            dailyInt = P * Math.pow((1 + i), n);
-            currentBal += dailyInt;
+    public double addInterest(double i, int n) {
+        if (i > 0 && n > 0) {
+            currentBal = currentBal * Math.pow((1 + i/365), n);
             return currentBal;
         } else {
             System.out.println("Please enter valid (positive) numbers.");

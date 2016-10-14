@@ -27,8 +27,9 @@ public class ATMTester {
         int choice;
 
         //Obtain the name of the bank and init. balance, and set those as the parameters of the AMT.
-        System.out.println("Please enter the name of your bank and your intial balance (individually).");
+        System.out.println("Please enter the name of your bank.");
         String bankName = kb.next();
+         System.out.println("Please enter your intial balance.");
         AMT bank = new AMT(bankName, kb.nextDouble());
 
         //While loop; keep popping up the menu until told not to.
@@ -55,13 +56,13 @@ public class ATMTester {
             } else 
             //Add interest to balance
             if (choice == 3) {
-                double P, i;
+                double i;
                 int n;
-                System.out.println("Please enter the prinicpal amount, interest rate (decimal) and amount of periods individually.");
-                P = kb.nextDouble();
-                i = kb.nextDouble();
+                System.out.println("Please enter the interest rate (%) and amount of days "
+                        + "to leave the balance invested, individually.");
+                i = (kb.nextDouble()/100);
                 n = kb.nextInt();
-                bank.addInterest(P, i, n);
+                bank.addInterest(i, n);
             } else 
             //View Balance
             if (choice == 4) {
