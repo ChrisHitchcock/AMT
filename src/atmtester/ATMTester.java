@@ -25,12 +25,22 @@ public class ATMTester {
         boolean menu;
         String end;
         int choice;
+        String bal;
+        AMT bank;
 
         //Obtain the name of the bank and init. balance, and set those as the parameters of the AMT.
         System.out.println("Please enter the name of your bank.");
         String bankName = kb.next();
         System.out.println("Please enter your intial balance.");
-        AMT bank = new AMT(bankName, kb.nextDouble());
+        bal = kb.next();
+        try {
+        bank = new AMT(bankName, Integer.parseInt(bal));
+        } catch (NumberFormatException e) {
+            System.out.println("That is not a valid balance. Please enter your balance again as a number.");
+            System.err.println("InputMismatchException: "+e.getMessage());
+            bal = kb.next();
+            bank = new AMT(bankName, Integer.parseInt(bal));
+        }
 
         //While loop; keep popping up the menu until told not to.
         menu = true;
@@ -72,18 +82,6 @@ public class ATMTester {
             if (choice == 5)
             {
                 menu=false;
-            }
-            
-            //Prompt regarding the while loop. If yes, while loop ends, if no, while loop continues.
-            if (menu==true)
-            {
-                System.out.println("Are you done?");
-                end = kb.next();
-                if (end.equalsIgnoreCase("yes")) {
-                    menu = false;
-                } else {
-                    menu = true;
-                }
             }
         }
         //Show the final balance
