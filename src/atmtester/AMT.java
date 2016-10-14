@@ -27,10 +27,10 @@ public class AMT {
      * @return currentBal
      */
     public double withdraw(double wd) {
-        if (wd >= 0) {
+        if (wd >= 0 && wd < currentBal) {
             currentBal = currentBal - wd;
             return currentBal;
-        } else  if (wd>currentBal) {
+        } else  if (wd>=0 && wd>currentBal) {
             System.out.println("You do not have that much money left in your account.");
             return currentBal;
         } else {
