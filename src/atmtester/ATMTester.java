@@ -34,12 +34,12 @@ public class ATMTester {
         System.out.println("Please enter your intial balance.");
         bal = kb.next();
         try {
-        bank = new AMT(bankName, Integer.parseInt(bal));
+        bank = new AMT(bankName, Double.parseDouble(bal));
         } catch (NumberFormatException e) {
             System.out.println("That is not a valid balance. Please enter your balance again as a number.");
             System.err.println("InputMismatchException: "+e.getMessage());
             bal = kb.next();
-            bank = new AMT(bankName, Integer.parseInt(bal));
+            bank = new AMT(bankName, Double.parseDouble(bal));
         }
 
         //While loop; keep popping up the menu until told not to.

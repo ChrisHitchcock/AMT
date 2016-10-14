@@ -30,6 +30,9 @@ public class AMT {
         if (wd >= 0) {
             currentBal = currentBal - wd;
             return currentBal;
+        } else  if (wd>currentBal) {
+            System.out.println("You do not have that much money left in your account.");
+            return currentBal;
         } else {
             System.out.println("Please enter a valid (positive) number.");
             return currentBal;
