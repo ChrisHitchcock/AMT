@@ -29,7 +29,7 @@ public class ATMTester {
         //Obtain the name of the bank and init. balance, and set those as the parameters of the AMT.
         System.out.println("Please enter the name of your bank.");
         String bankName = kb.next();
-         System.out.println("Please enter your intial balance.");
+        System.out.println("Please enter your intial balance.");
         AMT bank = new AMT(bankName, kb.nextDouble());
 
         //While loop; keep popping up the menu until told not to.
