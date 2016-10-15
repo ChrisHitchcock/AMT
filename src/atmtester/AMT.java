@@ -2,7 +2,9 @@ package atmtester;
 
 /**
  * This class is an object that represents a bank; it allows the user to deposit,
- * withdraw, add interest, and view the balance of their bank account.
+ * withdraw, add interest, and view the balance of their bank account.<p>
+ * pre: New AMT called <br>
+ * post: AMT created/modified
  * @author Chris
  */
 public class AMT {
@@ -12,7 +14,9 @@ public class AMT {
 
     /**
      * This constructor takes the inputted name of the bank and the initial balance,
-     * and sets those details as the details of the AMT.
+     * and sets those details as the details of the AMT.<p>
+     * pre: AMT called with inputted bank name and initial balance<br>
+     * post: AMT created with those inputted values
      * @param bk Name of the bank
      * @param ib Initial balance
      */
@@ -22,8 +26,10 @@ public class AMT {
     }
 
     /**
-     * This method allows the user to withdraw (remove) money from their account.
-     * @param wd Amount being withdraw.
+     * This method allows the user to withdraw (remove) money from their account.<p>
+     * pre: method called with inputted amount<br>
+     * post: that amount is taken from the AMT
+     * @param wd Amount being withdrawn.
      * @return currentBal
      */
     public double withdraw(double wd) {
@@ -40,7 +46,9 @@ public class AMT {
     }
 
     /**
-     * This method allows the user to deposit (add) money to their account.
+     * This method allows the user to deposit (add) money to their account.<p>
+     * pre: method called with inputted amount<br>
+     * post: that amount is added to the AMT
      * @param dp Amount being deposited
      * @return currentBal
      */
@@ -55,9 +63,11 @@ public class AMT {
     }
 
     /**
-     * This method allows the user to add interest to their balance.
+     * This method allows the user to add interest to their balance.<p>
+     * pre: method called with inputted interest rate and days to keep $ invested<br>
+     * post: daily interest added to account
      * @param i Interest rate
-     * @param n Number of periods
+     * @param n Number of days
      * @return currentBal
      */
     public double addInterest(double i, int n) {
@@ -71,8 +81,11 @@ public class AMT {
     }
 
     /**
-     * This method allows the user to view the balance of their bank account
+     * This method allows the user to view the balance of their bank account.<p>
+     * pre: method called with final boolean<br>
+     * post: output string of balance returned as final or current balance
      * @return output (balance)
+     * @param fin Boolean to check if the menu is ending. If so, print the regular message but replace current with final.
      */
     public String viewBal(boolean fin) {
         currentBal = currentBal * 100;

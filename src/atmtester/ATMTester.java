@@ -23,7 +23,6 @@ public class ATMTester {
         //Variables and such.
         Scanner kb = new Scanner(System.in);
         boolean menu;
-        String end;
         int choice;
         String bal;
         AMT bank;
@@ -46,7 +45,7 @@ public class ATMTester {
         menu = true;
         while (menu == true) {
             //Menu and choice selection
-            System.out.println((char)27+"[1m"+bankName + "\n1.\tDeposit Money\n2.\tWithdraw Money\n3.\tAdd Interest\n4.\tView Balance\n5.\tExit");
+            System.out.println("\n" + bankName + "\n1.\tDeposit Money\n2.\tWithdraw Money\n3.\tAdd Interest\n4.\tView Balance\n5.\tExit");
             choice = kb.nextInt();
 
             //If statements regarding the selected choice.
